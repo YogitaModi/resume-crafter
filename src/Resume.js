@@ -5,10 +5,56 @@ import Academic from "./Academic";
 import ProfessionalExp from "./ProfessionalExp";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
 
 export default function Resume() {
+  let [educationTime, setEducationTime] = useState([]);
+  let [professionTime, setProfessionTime] = useState([]);
+  let [projectTime, setProjectTime] = useState([]);
+
+  //  adding section handler
+  const addingSection = (evt) => {
+    const type = evt.target.getAttribute("data-id");
+
+    if (type === "education") {
+      setEducationTime([
+        ...educationTime,
+        { id: uuidv4(), value: Math.random() },
+      ]);
+    } else if (type === "profession") {
+      setProfessionTime([
+        ...professionTime,
+        { id: uuidv4(), value: Math.random() },
+      ]);
+    } else if (type === "project") {
+      setProjectTime([...projectTime, { id: uuidv4(), value: Math.random() }]);
+    }
+  };
+
+  // deleteing section handler
+  const removingSection = (evt) => {
+    let dtype = evt.target.getAttribute("datatype");
+    if (dtype === "educations") {
+      const deleted = evt.target.getAttribute("data-id");
+      const newarr = educationTime.filter((value) => value.id !== deleted);
+
+      setEducationTime(newarr);
+    } else if (dtype === "projects") {
+      const deletepro = evt.target.getAttribute("data-id");
+      let newarr = projectTime.filter((value) => value.id !== deletepro);
+
+      setProjectTime(newarr);
+    } else if (dtype === "professions") {
+      const deletepro = evt.target.getAttribute("data-id");
+      let newarr = professionTime.filter((value) => value.id !== deletepro);
+
+      setProfessionTime(newarr);
+    }
+  };
   return (
     <div>
+      {/* div for personal informtion */}
       <div id="profile">
         <h1>Introduction</h1>
         <Profile />
@@ -16,18 +62,80 @@ export default function Resume() {
       <div id="about">
         <About />
       </div>
-      <div>
+
+      {/* div for education informtion */}
+      <div className="education-section">
         <h1>Education</h1>
         <Academic />
+        <button data-id="education" onClick={addingSection}>
+          Add Section
+        </button>
+        {educationTime.map((value) => (
+          <div>
+            <Academic />
+            <button onClick={addingSection} data-id="education">
+              Add Section
+            </button>
+            <button
+              onClick={removingSection}
+              data-id={value.id}
+              datatype="educations"
+            >
+              Remove Section
+            </button>
+          </div>
+        ))}
       </div>
-      <div>
+
+      {/* div for experience informtion */}
+      <div className="Experience">
         <h1>Experience</h1>
         <ProfessionalExp />
+        <button data-id="profession" onClick={addingSection}>
+          Add section
+        </button>
+        {professionTime.map((value) => (
+          <div>
+            <ProfessionalExp />
+            <button onClick={addingSection} data-id="profession">
+              Add Section
+            </button>
+            <button
+              onClick={removingSection}
+              data-id={value.id}
+              datatype="professions"
+            >
+              Remove Section
+            </button>
+          </div>
+        ))}
       </div>
-      <div>
+
+      {/* div for project informtion */}
+      <div className="project">
         <h1>Project</h1>
         <Projects />
+        <button data-id="project" onClick={addingSection}>
+          Add section
+        </button>
+        {projectTime.map((value) => (
+          <div>
+            <Projects />
+            <button onClick={addingSection} data-id="project">
+              Add Section
+            </button>
+            <button
+              onClick={removingSection}
+              data-id={value.id}
+              datatype="projects"
+            >
+              Remove Section
+            </button>
+          </div>
+        ))}
       </div>
+
+      {/* div for skills */}
       <div>
         <h1>Skills</h1>
         <Skills />

@@ -13,7 +13,7 @@ export default function Academic() {
         <input min={2000} type="number" />
       </div>
       <div>
-        <label for="qualification">Qualification</label>
+        <label htmlFor="qualification">Qualification</label>
         <input id="qualification" type="text" />
       </div>
     </div>

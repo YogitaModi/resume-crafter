@@ -4,27 +4,27 @@ export default function Profile() {
   return (
     <div>
       <div>
-        <label for="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input id="name" type="text" />
       </div>
       <div>
-        <label for="designation">Current Designation</label>
+        <label htmlFor="designation">Current Designation</label>
         <input id="designation" type="text" />
       </div>
       <div>
-        <label for="location">Location</label>
+        <label htmlFor="location">Location</label>
         <input type="text" id="location" />
       </div>
       <div>
-        <label for="e-mail">E-mail</label>
+        <label htmlFor="e-mail">E-mail</label>
         <input id="e-mail" type="text" />
       </div>
       <div>
-        <label for="contact">Phone No.</label>
+        <label htmlFor="contact">Phone No.</label>
         <input id="contact" type="number" required />
       </div>
       <div>
-        <label for="website">Website</label>
+        <label htmlFor="website">Website</label>
         <input id="website" type="text" />
       </div>
     </div>

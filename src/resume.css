@@ -1,0 +1,30 @@
+html,body{
+    margin:30px;
+    padding:20px;
+}
+
+.horizontal-line{
+    height: 2px;
+    margin: 5px;
+    background-color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+.profile .about .academic{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+   
+}
+.resume{
+    
+
+border: 1px solid black;
+    border-radius: 5px;
+
+}
+

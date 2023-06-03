@@ -7,6 +7,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
+import "./resume.css";
 
 export default function Resume() {
   let [educationTime, setEducationTime] = useState([]);
@@ -53,18 +54,23 @@ export default function Resume() {
     }
   };
   return (
-    <div>
+    <div className="resume">
       {/* div for personal informtion */}
-      <div id="profile">
+      <div id="profile-section">
         <h1>Introduction</h1>
         <Profile />
       </div>
-      <div id="about">
+      <hr className="horizontal-line" />
+
+      {/* div for about */}
+      <div id="about-section">
+        <h1>About</h1>
         <About />
       </div>
 
       {/* div for education informtion */}
-      <div className="education-section">
+      <hr className="horizontal-line" />
+      <div id="education-section">
         <h1>Education</h1>
         <Academic />
         <button data-id="education" onClick={addingSection}>
@@ -88,7 +94,8 @@ export default function Resume() {
       </div>
 
       {/* div for experience informtion */}
-      <div className="Experience">
+      <hr className="horizontal-line" />
+      <div id="experience-section">
         <h1>Experience</h1>
         <ProfessionalExp />
         <button data-id="profession" onClick={addingSection}>
@@ -112,7 +119,8 @@ export default function Resume() {
       </div>
 
       {/* div for project informtion */}
-      <div className="project">
+      <hr className="horizontal-line" />
+      <div id="project-section">
         <h1>Project</h1>
         <Projects />
         <button data-id="project" onClick={addingSection}>
@@ -136,10 +144,14 @@ export default function Resume() {
       </div>
 
       {/* div for skills */}
-      <div>
+      <hr className="horizontal-line" />
+      <div id="skill-section">
         <h1>Skills</h1>
         <Skills />
       </div>
+
+      {/* stop editing */}
+      <div>{/* <stopEditing /> */}</div>
     </div>
   );
 }

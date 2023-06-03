@@ -9,9 +9,11 @@ export default function Skills() {
     setSkill(e.target.value);
   };
   const AddingAction = () => {
-    setSkillTag([...skilltag, { id: uuidv4(), value: skill }]);
-    setSkill("");
-    console.log(skilltag);
+    if (skill !== "") {
+      setSkillTag([...skilltag, { id: uuidv4(), value: skill }]);
+      setSkill("");
+      console.log(skilltag);
+    }
   };
   const deleteAction = (e) => {
     const deletevalue = e.target.getAttribute("data-id");

@@ -3,8 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <div>
-        <label>About</label>
+      <div className="about">
         <textarea />
       </div>
     </div>

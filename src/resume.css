@@ -1,6 +1,6 @@
 html,body{
-    margin:30px;
-    padding:20px;
+    margin:auto;
+    padding:auto;
 }
 
 .horizontal-line{
@@ -10,15 +10,19 @@ html,body{
     padding: 2px;
     border-radius: 5px;
 }
-.profile .about .academic{
+.profile, .about, .academic, .profession, .project{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+    margin: 4px;
     
     
    
+}
+label{
+    margin:3px
 }
 .resume{
     

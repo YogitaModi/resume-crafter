@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import "./resume.css";
 
-export default function Resume() {
+export default function Resume(props) {
   let [educationTime, setEducationTime] = useState([]);
   let [professionTime, setProfessionTime] = useState([]);
   let [projectTime, setProjectTime] = useState([]);
@@ -151,7 +151,15 @@ export default function Resume() {
       </div>
 
       {/* stop editing */}
-      <div>{/* <stopEditing /> */}</div>
+      <div>
+        <button
+          onClick={() => {
+            alert("Done");
+          }}
+        >
+          Done
+        </button>
+      </div>
     </div>
   );
 }

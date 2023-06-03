@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function stopEditing() {
+export default function Editing() {
   return (
     <div>
       <button
@@ -9,13 +9,13 @@ export default function stopEditing() {
         data-toggle="modal"
         data-target="#exampleModal"
       >
-        Launch demo modal
+        Stop editing
       </button>
 
       <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"

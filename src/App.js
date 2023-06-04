@@ -1,11 +1,14 @@
 import "./App.css";
-// import DemoComponent from "./DemoComponent";
+
 import Resume from "./Resume";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import { useState } from "react";
+import ProfileState from "./ProfileState";
+import Display from "./Display";
+// import DemoComponent from "./DemoComponent";
 
 function App() {
   let [progress, setProgress] = useState(0);
@@ -14,22 +17,25 @@ function App() {
   };
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <LoadingBar height={3} color="#f11946" Progress={progress} />
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Home setProgress={() => setProgres(progress)} />}
-          />
-          <Route
-            exact
-            path="/create-resume"
-            element={<Resume setProgress={setProgres} />}
-          />
-        </Routes>
-      </Router>
+      <ProfileState>
+        <Router>
+          <Navbar />
+          <LoadingBar height={3} color="#f11946" Progress={progress} />
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={<Home setProgress={() => setProgres(progress)} />}
+            />
+            <Route
+              exact
+              path="/create-resume"
+              element={<Resume setProgress={setProgres} />}
+            />
+            <Route exact path="/display-resume" element={<Display />} />
+          </Routes>
+        </Router>
+      </ProfileState>
     </div>
   );
 }

@@ -54,112 +54,104 @@ export default function Resume(props) {
     }
   };
   return (
-    <div className="resume">
-      {/* div for personal informtion */}
-      <div id="profile-section">
-        <h1>Introduction</h1>
-        <Profile />
-      </div>
-      <hr className="horizontal-line" />
+    <>
+      <div className="resume">
+        {/* div for personal informtion */}
 
-      {/* div for about */}
-      <div id="about-section">
-        <h1>About</h1>
-        <About />
-      </div>
+        <div id="profile-section">
+          <h1>Introduction</h1>
+          <Profile />
+        </div>
+        <hr className="horizontal-line" />
 
-      {/* div for education informtion */}
-      <hr className="horizontal-line" />
-      <div id="education-section">
-        <h1>Education</h1>
-        <Academic />
-        <button data-id="education" onClick={addingSection}>
-          Add Section
-        </button>
-        {educationTime.map((value) => (
-          <div>
-            <Academic />
-            <button onClick={addingSection} data-id="education">
-              Add Section
-            </button>
-            <button
-              onClick={removingSection}
-              data-id={value.id}
-              datatype="educations"
-            >
-              Remove Section
-            </button>
-          </div>
-        ))}
-      </div>
+        {/* div for about */}
+        <div id="about-section">
+          <h1>About</h1>
+          <About />
+        </div>
 
-      {/* div for experience informtion */}
-      <hr className="horizontal-line" />
-      <div id="experience-section">
-        <h1>Experience</h1>
-        <ProfessionalExp />
-        <button data-id="profession" onClick={addingSection}>
-          Add section
-        </button>
-        {professionTime.map((value) => (
-          <div>
-            <ProfessionalExp />
-            <button onClick={addingSection} data-id="profession">
-              Add Section
-            </button>
-            <button
-              onClick={removingSection}
-              data-id={value.id}
-              datatype="professions"
-            >
-              Remove Section
-            </button>
-          </div>
-        ))}
-      </div>
+        {/* div for education informtion */}
+        <hr className="horizontal-line" />
+        <div id="education-section">
+          <h1>Education</h1>
+          <Academic />
+          <button data-id="education" onClick={addingSection}>
+            Add Section
+          </button>
+          {educationTime.map((value) => (
+            <div key={uuidv4()}>
+              <Academic />
+              <button onClick={addingSection} data-id="education">
+                Add Section
+              </button>
+              <button
+                onClick={removingSection}
+                data-id={value.id}
+                datatype="educations"
+              >
+                Remove Section
+              </button>
+            </div>
+          ))}
+        </div>
 
-      {/* div for project informtion */}
-      <hr className="horizontal-line" />
-      <div id="project-section">
-        <h1>Project</h1>
-        <Projects />
-        <button data-id="project" onClick={addingSection}>
-          Add section
-        </button>
-        {projectTime.map((value) => (
-          <div>
-            <Projects />
-            <button onClick={addingSection} data-id="project">
-              Add Section
-            </button>
-            <button
-              onClick={removingSection}
-              data-id={value.id}
-              datatype="projects"
-            >
-              Remove Section
-            </button>
-          </div>
-        ))}
-      </div>
+        {/* div for experience informtion */}
+        <hr className="horizontal-line" />
+        <div id="experience-section">
+          <h1>Experience</h1>
+          <ProfessionalExp />
+          <button data-id="profession" onClick={addingSection}>
+            Add section
+          </button>
+          {professionTime.map((value) => (
+            <div key={uuidv4()}>
+              <ProfessionalExp />
+              <button onClick={addingSection} data-id="profession">
+                Add Section
+              </button>
+              <button
+                onClick={removingSection}
+                data-id={value.id}
+                datatype="professions"
+              >
+                Remove Section
+              </button>
+            </div>
+          ))}
+        </div>
 
-      {/* div for skills */}
-      <hr className="horizontal-line" />
-      <div id="skill-section">
-        <h1>Skills</h1>
-        <Skills />
-      </div>
+        {/* div for project informtion */}
+        <hr className="horizontal-line" />
+        <div id="project-section">
+          <h1>Project</h1>
+          <Projects />
+          <button data-id="project" onClick={addingSection}>
+            Add section
+          </button>
+          {projectTime.map((value) => (
+            <div key={uuidv4()}>
+              <Projects />
+              <button onClick={addingSection} data-id="project">
+                Add Section
+              </button>
+              <button
+                onClick={removingSection}
+                data-id={value.id}
+                datatype="projects"
+              >
+                Remove Section
+              </button>
+            </div>
+          ))}
+        </div>
 
-      {/* stop editing */}
-      <div>
-        <button
-          onClick={() => {
-            alert("Done");
-          }}
-        >
-          Done
-        </button>
+        {/* div for skills */}
+        <hr className="horizontal-line" />
+        <div id="skill-section">
+          <h1>Skills</h1>
+          <Skills />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -28,6 +28,11 @@ export default function Navbar() {
                 Create Resume
               </Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/display-resume">
+                Display Resume
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

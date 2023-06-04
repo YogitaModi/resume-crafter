@@ -1,26 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./resume.css";
-import { useState } from "react";
+// import { useState } from "react";
+import profileContext from "./profileContext";
 
-export default function Profile() {
-  const [name, setName] = useState();
-  const [designation, setDesignation] = useState();
-  const [location, setLocation] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [website, setWebsite] = useState();
+export default function Profile(props) {
+  const pro = useContext(profileContext);
+  // const [name, setName] = useState();
+
+  // const [designation, setDesignation] = useState();
+  // const [location, setLocation] = useState();
+  // const [email, setEmail] = useState();
+  // const [phone, setPhone] = useState();
+  // const [website, setWebsite] = useState();
 
   return (
     <div>
-      <div className="profile name">
-        <label htmlFor="name">Name</label>
+      <div className="profile fname">
+        <label htmlFor="name">First Name</label>
         <input
           id="name"
           type="text"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          value={pro.fName}
+          onChange={pro.updateFName}
+        />
+      </div>
+      <div className="profile lname">
+        <label htmlFor="name">Last Name</label>
+        <input
+          id="name"
+          type="text"
+          value={pro.lName}
+          onChange={pro.updateLName}
         />
       </div>
       <div className="profile designation">
@@ -28,10 +38,8 @@ export default function Profile() {
         <input
           id="designation"
           type="text"
-          value={designation}
-          onChange={(e) => {
-            setDesignation(e.target.value);
-          }}
+          value={pro.designation}
+          onChange={pro.updateDesi}
         />
       </div>
       <div className="profile location">
@@ -39,10 +47,8 @@ export default function Profile() {
         <input
           type="text"
           id="location"
-          value={location}
-          onChange={(e) => {
-            setLocation(e.target.value);
-          }}
+          value={pro.location}
+          onChange={pro.updateLoc}
         />
       </div>
       <div className="profile email">
@@ -50,10 +56,8 @@ export default function Profile() {
         <input
           id="e-mail"
           type="text"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
+          value={pro.email}
+          onChange={pro.updateEmail}
         />
       </div>
       <div className="profile contact">
@@ -61,11 +65,8 @@ export default function Profile() {
         <input
           id="contact"
           type="number"
-          value={phone}
-          onChange={(e) => {
-            setPhone(e.target.value);
-          }}
-          required
+          value={pro.phone}
+          onChange={pro.updatePhone}
         />
       </div>
       <div className="profile website">
@@ -73,12 +74,16 @@ export default function Profile() {
         <input
           id="website"
           type="text"
-          value={website}
-          onChange={(e) => {
-            setWebsite(e.target.value);
-          }}
+          value={pro.website}
+          onChange={pro.updateWebsite}
         />
       </div>
     </div>
   );
 }
+// updateDesi,
+// updateEmail,
+// updatePhone,
+// updateLoc,
+// updateWebsite,
+// updateName,

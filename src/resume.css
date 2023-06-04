@@ -17,6 +17,8 @@ html,body{
     align-items: center;
     /* flex-direction: column; */
     margin: 4px;
+
+
     
     
    
@@ -32,3 +34,12 @@ border: 1px solid black;
 
 }
 
+#bground{
+    height:100vh;
+    background-color: gray;
+    width:60vh;
+    margin:10px;
+    padding: 10px;
+    border: 3px solid #212426;
+    border-radius: 5px;
+}

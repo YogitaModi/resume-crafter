@@ -1,44 +1,50 @@
 {
   "api": [
     {
-      "id": "fedcccac-a048-41e0-b488-76e016f6b925",
-      "name": "red"
+      "id": "6732befa-3421-4d95-81d0-f5596c6272dd",
+      "fname": "Yogita",
+      "lname": "Modi",
+      "location": "rajasthan",
+      "designation": "learning",
+      "phone": "454555",
+      "email": "gmail@mail.com",
+      "company": "ABC.PVT.LTD",
+      "about": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "university": "poornima",
+      "qualification": "B.TECH",
+      "endYear": "2021",
+      "startYear": "2017",
+      "companyLoc": "banggalore",
+      "companyTenure": "4478785857",
+      "companyDesig": "xyz",
+      "companyExp": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "projectTitle": "resume crafter",
+      "projectTenure": "mnbdbertwIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "projectDescription": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "projectUrl": "nfsjkjgkjkhwejkrtkjwerjt"
     },
     {
-      "id": "4bd98e84-6a7d-48cf-b7e1-fb863c9991cf",
-      "name": "wine"
-    },
-    {
-      "id": "cfde698d-8369-4927-ab06-f87d7798cfe5",
-      "name": "boring"
-    },
-    {
-      "id": "95d53ff0-3779-4ec4-b288-e984b7b196d9",
-      "name": "cyna"
-    },
-    {
-      "id": "57c2100c-4f41-4078-aa69-d08c2b923f34",
-      "name": "black"
-    },
-    {
-      "id": "85eaa9d1-dd8f-42a5-a8a6-0a5c3c4361fc",
-      "name": "green"
-    },
-    {
-      "id": "ff79d55f-e616-400c-9ef8-9337300ac3e3",
-      "name": "yellow"
-    },
-    {
-      "id": "86dacb69-1412-455d-96db-e5610cdfda8f",
-      "name": "apple"
-    },
-    {
-      "id": "40ba1cc9-6f6b-4bfe-9d37-aa2f09045292",
-      "name": ",.ccc"
-    },
-    {
-      "id": "537baf79-5c3a-409b-a953-5635f1347fa3",
-      "name": "yellow"
+      "id": "cbab96e3-041b-45fe-9a80-6e7a11f4e838",
+      "fname": "Yogita",
+      "lname": "Modi",
+      "location": "rajasthan",
+      "designation": "learning",
+      "phone": "454445465",
+      "email": "email@kfgj.com",
+      "company": "ABC.PVT.LTD",
+      "about": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "university": "poornima",
+      "qualification": "B.TECH",
+      "endYear": "2021",
+      "startYear": "2017",
+      "companyLoc": "bangalore",
+      "companyTenure": "4557575",
+      "companyDesig": "application engineer",
+      "companyExp": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "projectTitle": "resume crafter",
+      "projectTenure": "smnnfgergj",
+      "projectDescription": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "projectUrl": "mnndfndfngnglearl"
     }
   ]
 }

@@ -8,8 +8,11 @@ import Skills from "./Skills";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import "./resume.css";
+import profileContext from "./profileContext";
+import { useContext } from "react";
 
 export default function Resume(props) {
+  const resum = useContext(profileContext);
   let [educationTime, setEducationTime] = useState([]);
   let [professionTime, setProfessionTime] = useState([]);
   let [projectTime, setProjectTime] = useState([]);
@@ -151,6 +154,9 @@ export default function Resume(props) {
           <h1>Skills</h1>
           <Skills />
         </div>
+
+        <p>Click the submit details</p>
+        <button onClick={resum.updateSend}>Done</button>
       </div>
     </>
   );

@@ -35,9 +35,9 @@ border: 1px solid black;
 }
 
 #bground{
-    height:100vh;
+    height:1400px;
     background-color: gray;
-    width:60vh;
+    width:80vh;
     margin:10px;
     padding: 10px;
     border: 3px solid #212426;

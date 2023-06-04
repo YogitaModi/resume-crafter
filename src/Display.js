@@ -35,6 +35,7 @@ export default function Display() {
       <hr />
       <h1>About</h1>
       <p>{pro.about}</p>
+      <hr />
       <h1>Education</h1>
       <h3>{pro.university || "will be diplayes when you edit"}</h3>
       <span>{pro.startYear}</span> - <span>{pro.endYear}</span>

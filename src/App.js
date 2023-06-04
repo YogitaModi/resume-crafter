@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import { useState } from "react";
 import ProfileState from "./ProfileState";
-import Display from "./Display";
-// import DemoComponent from "./DemoComponent";
+
+import ResumeDisplay from "./ResumeDisplay";
 
 function App() {
   let [progress, setProgress] = useState(0);
@@ -32,7 +32,7 @@ function App() {
               path="/create-resume"
               element={<Resume setProgress={setProgres} />}
             />
-            <Route exact path="/display-resume" element={<Display />} />
+            <Route exact path="/display-resume" element={<ResumeDisplay />} />
           </Routes>
         </Router>
       </ProfileState>

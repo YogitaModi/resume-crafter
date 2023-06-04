@@ -24,6 +24,16 @@ export default function ProfileState(props) {
   const [projectDescription, setProjectDescription] = useState();
   const [projectTenure, setProjectTenure] = useState();
   const [projectUrl, setProjectUrl] = useState();
+  // connecting to backend
+  let [sending, setSend] = useState(false);
+  const updateSend = () => {
+    let respond = window.confirm("done editing");
+    if (respond && fName !== "" && lName !== "") {
+      setSend(true);
+    } else {
+      setSend(false);
+    }
+  };
 
   const updateFName = (e) => {
     setFName(e.target.value);
@@ -93,6 +103,8 @@ export default function ProfileState(props) {
   return (
     <profileContext.Provider
       value={{
+        sending,
+        updateSend,
         fName,
         lName,
         updateFName,

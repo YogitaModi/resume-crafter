@@ -5,7 +5,7 @@ import "./App.css";
 export default function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <Link className="navbar-brand" to="/">
           Home
         </Link>

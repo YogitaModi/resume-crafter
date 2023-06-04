@@ -11,7 +11,7 @@ import "./resume.css";
 import profileContext from "./profileContext";
 import { useContext } from "react";
 
-export default function Resume(props) {
+export default function Resume() {
   const resum = useContext(profileContext);
   let [educationTime, setEducationTime] = useState([]);
   let [professionTime, setProfessionTime] = useState([]);
@@ -159,7 +159,21 @@ export default function Resume(props) {
         </div>
 
         <p>Click the submit details</p>
-        <button onClick={resum.updateSend}>Done</button>
+        <button
+          onClick={resum.updateSend}
+          style={{
+            width: "100px",
+            height: "50px",
+            color: "whitesmoke",
+            backgroundColor: "green",
+            borderRadius: "5px",
+            border: "none",
+            fontSize: "18px",
+            marginBottom: "5px",
+          }}
+        >
+          <strong>Done</strong>
+        </button>
       </div>
     </div>
   );

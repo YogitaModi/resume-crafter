@@ -118,7 +118,7 @@ export default function ResumeDisplay() {
         </strong>
       </p>
       <div className="bground">
-        <h1 style={{ marginTop: "15px", color: "whitesmoke" }}>
+        <h1 style={{ marginTop: "15px", color: "whitesmoke", padding: "10px" }}>
           Resume Gallery
         </h1>
 
@@ -128,7 +128,7 @@ export default function ResumeDisplay() {
             color: "white",
             backgroundColor: "green",
             borderRadius: "8px",
-            marginTop: "40px",
+            marginTop: "20px",
             height: "60px",
             border: "none",
           }}

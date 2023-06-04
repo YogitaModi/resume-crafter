@@ -110,80 +110,91 @@ export default function ResumeDisplay() {
     });
   }
   return (
-    <div className="bground">
-      <h1 style={{ marginTop: "70px" }}>Resume Gallery</h1>
-      <p style={{ marginTop: "20px" }}>
-        Fill your details on create resume page and click the below button to
-        view the resume
+    <div>
+      <p className="tag-line">
+        <strong>
+          Fill your details on create resume page and click the below button to
+          view the resume
+        </strong>
       </p>
-      <button
-        onClick={Adding}
-        style={{
-          color: "white",
-          backgroundColor: "green",
-          borderRadius: "3px",
-          marginTop: "20px",
-          height: "60px",
-        }}
-      >
-        click me to View Resume
-      </button>
+      <div className="bground">
+        <h1 style={{ marginTop: "15px", color: "whitesmoke" }}>
+          Resume Gallery
+        </h1>
 
-      {data.map((item) => (
-        <div key={item.id} id="resume-bg">
-          <div
-            style={{
-              width: "100px",
-              height: "100px",
-              backgroundColor: "green",
-              fontWeight: "bolder",
-              color: "#282A35",
-              fontSize: "50px",
+        <button
+          onClick={Adding}
+          style={{
+            color: "white",
+            backgroundColor: "green",
+            borderRadius: "8px",
+            marginTop: "40px",
+            height: "60px",
+            border: "none",
+          }}
+        >
+          <strong>Click me to View Resume</strong>
+        </button>
 
-              padding: "2px",
-              margin: "5px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {item.fname[0]}
-            {item.lname[0]}
+        {data.map((item) => (
+          <div key={item.id} id="resume-bg">
+            <div className="left-side">
+              <div
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  backgroundColor: "whitesmoke",
+                  fontWeight: "bolder",
+                  color: " #00032b",
+                  fontSize: "50px",
+
+                  padding: "2px",
+                  margin: "5px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {item.fname[0]}
+                {item.lname[0]}
+              </div>
+              <h1>
+                {item.fname}
+                {item.lname}
+              </h1>
+              <h4>{item.designation}</h4>
+              <span>{item.location}</span> | <span>{item.email}</span> |
+              <span>{item.phone}</span>
+              <p>{item.website}</p>
+            </div>
+            <div className="right-side">
+              <h1>About</h1>
+              <p>{item.about}</p>
+              <hr />
+              <h1>Education</h1>
+              <h3>{item.university}</h3>
+              <span>{item.startYear}</span> - <span>{item.endYear}</span>
+              <h5>{item.qualification}</h5>
+              <hr />
+              <h1>Experience</h1>
+              <h3>{item.company}</h3>
+              <p>{item.companyLoc}</p>
+              <h4>{item.companyDesig}</h4>
+              <h5>{item.companyTenure}</h5>
+              <p>{item.companyExp}</p>
+              <hr />
+              <h1>Project</h1>
+              <h3>{item.projectTitle}</h3>
+              <p>{item.projectUrl}</p>
+              <p>{item.projectTenure}</p>
+              <p>{item.projectDescription}</p>
+              <button onClick={deleteName} data-id={item.id}>
+                Delete Resume
+              </button>
+            </div>
           </div>
-          <h1>
-            {item.fname}
-            {item.lname}
-          </h1>
-          <h4>{item.designation}</h4>
-          <span>{item.location}</span> | <span>{item.email}</span> |
-          <span>{item.phone}</span>
-          <p>{item.website}</p>
-          <hr />
-          <h1>About</h1>
-          <p>{item.about}</p>
-          <hr />
-          <h1>Education</h1>
-          <h3>{item.university}</h3>
-          <span>{item.startYear}</span> - <span>{item.endYear}</span>
-          <h5>{item.qualification}</h5>
-          <hr />
-          <h1>Experience</h1>
-          <h3>{item.company}</h3>
-          <p>{item.companyLoc}</p>
-          <h4>{item.companyDesig}</h4>
-          <h5>{item.companyTenure}</h5>
-          <p>{item.companyExp}</p>
-          <hr />
-          <h1>Project</h1>
-          <h3>{item.projectTitle}</h3>
-          <p>{item.projectUrl}</p>
-          <p>{item.projectTenure}</p>
-          <p>{item.projectDescription}</p>
-          <button onClick={deleteName} data-id={item.id}>
-            Delete Resume
-          </button>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

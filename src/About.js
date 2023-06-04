@@ -7,7 +7,11 @@ export default function About() {
   return (
     <div>
       <div className="about">
-        <textarea value={ab.about} onChange={ab.updateAbout} />
+        <textarea
+          value={ab.about}
+          onChange={ab.updateAbout}
+          minLength={"5000px"}
+        />
       </div>
     </div>
   );

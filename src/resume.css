@@ -17,37 +17,83 @@ html,body{
     align-items: center;
     /* flex-direction: column; */
     margin: 4px;
-
-
-    
-    
-   
 }
 label{
     margin:3px
 }
-.resume{
-    
 
-border: 1px solid black;
-    border-radius: 5px;
 
-}
-
+/* display resume page */
 #resume-bg{
     height:1400px;
-    background-color: #282A35;
+   
     width:70vw;
-    margin:10px;
+    
     margin-left: 190px;
-    margin-top: 80px;
-    padding: 10px;
+    margin-top: 40px;
+   
     border: 3px solid #212426;
     border-radius: 5px;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    display: flex;
+    flex-flow: row;
 }
+/* display resume page */
 .bground{
-    background-color: antiquewhite;
+    background-color: #282A35;
+    border: none;
+}
+.left-side{
+    background-color: #00032b;
+    padding: 10px;
+}
+.right-side{
+    background-color:whitesmoke;
+    color: #00032b;
+    padding: 20px;
+}
+
+/* create resume page */
+.resume{
+    background-color:#282A35;
+    color: antiquewhite;
+    /* margin-top: 50px; */
+}
+input, textarea{
+    background-color: #212426;
+    color: antiquewhite;
+}
+/* home page */
+.home-page{
+    background-color: #282A35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resume-tag{
+    background-color: #00032b;
+    color: whitesmoke;
+    margin-top: 70px;
+    padding: 20px;
+    height: 200px;
+    width:450px;
+    border: 2px solid whitesmoke;
+}
+.initials{
+    width: 250px;
+    height: 200px;
+    background-color: whitesmoke;
+    color: #00032b;
+    font-size: 100px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag-line{
+    margin-top: 70px;
+    color:#00032b;
+   
 }

@@ -1,17 +1,33 @@
 import React from "react";
-import "./App.css";
-// import profileContext from "./profileContext";
-// import { useContext } from "react";
+import "./resume.css";
 
 export default function Home() {
-  // const hdisp = useContext(profileContext);
-  // const style1 = {
-  // width: "250px",
-  //   height: "60px",
-  //   backgroundColor: "blue",
-  //   padding: "10px",
-  //   margin: "10px",
-  //   borderRadius: "5px",
-  // };
-  return <div className="home-page"></div>;
+  return (
+    <div>
+      <p className="tag-line">
+        <strong>
+          Use this Resume Crafter and build your own resume and kick start your
+          journey
+        </strong>
+      </p>
+
+      <div className="home-page">
+        <div className="initials">
+          <h1>YM</h1>
+        </div>
+        <div className="resume-tag">
+          <h1>Resume</h1>
+          <h5>
+            <strong>Name - </strong>YOGITA MODI
+          </h5>
+          <p>
+            <strong>Location - </strong>Rajasthan
+          </p>
+          <p>
+            <strong>E-mail - </strong>gmail@mail.com
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -57,7 +57,10 @@ export default function Resume(props) {
     }
   };
   return (
-    <>
+    <div>
+      <p className="tag-line">
+        <strong>Start editing and build effective resume</strong>
+      </p>
       <div className="resume">
         {/* div for personal informtion */}
 
@@ -158,6 +161,6 @@ export default function Resume(props) {
         <p>Click the submit details</p>
         <button onClick={resum.updateSend}>Done</button>
       </div>
-    </>
+    </div>
   );
 }

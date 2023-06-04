@@ -3,27 +3,27 @@ import { useState } from "react";
 import React from "react";
 
 export default function ProfileState(props) {
-  const [fName, setFName] = useState("Yogita");
-  const [lName, setLName] = useState("Modi");
-  const [designation, setDesignation] = useState();
-  const [location, setLocation] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [website, setWebsite] = useState();
-  const [about, setAbout] = useState();
-  const [university, setUniversity] = useState();
-  const [qualification, setQualification] = useState();
+  const [fName, setFName] = useState("type...");
+  const [lName, setLName] = useState("type...");
+  const [designation, setDesignation] = useState("type...");
+  const [location, setLocation] = useState("type...");
+  const [email, setEmail] = useState("type...");
+  const [phone, setPhone] = useState("type...");
+  const [website, setWebsite] = useState("type...");
+  const [about, setAbout] = useState("type...");
+  const [university, setUniversity] = useState("type...");
+  const [qualification, setQualification] = useState("type...");
   const [startYear, setStartYear] = useState();
   const [endYear, setEndYear] = useState();
-  const [company, setCompany] = useState();
-  const [companyLoc, setCompanyLoc] = useState();
-  const [companyTenure, setCompanyTenure] = useState();
-  const [companyDesig, setCompanyDesig] = useState();
-  const [companyExp, setCompanyExp] = useState();
-  const [projectTitle, setProjectTitle] = useState();
-  const [projectDescription, setProjectDescription] = useState();
-  const [projectTenure, setProjectTenure] = useState();
-  const [projectUrl, setProjectUrl] = useState();
+  const [company, setCompany] = useState("type...");
+  const [companyLoc, setCompanyLoc] = useState("type...");
+  const [companyTenure, setCompanyTenure] = useState("type...");
+  const [companyDesig, setCompanyDesig] = useState("type...");
+  const [companyExp, setCompanyExp] = useState("type...");
+  const [projectTitle, setProjectTitle] = useState("type...");
+  const [projectDescription, setProjectDescription] = useState("type...");
+  const [projectTenure, setProjectTenure] = useState("type...");
+  const [projectUrl, setProjectUrl] = useState("type...");
   // connecting to backend
   let [sending, setSend] = useState(false);
   const updateSend = () => {

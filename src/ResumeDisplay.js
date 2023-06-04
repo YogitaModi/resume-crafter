@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import "./skill.css";
+
 import "./resume.css";
 import profileContext from "./profileContext";
 
@@ -110,30 +110,49 @@ export default function ResumeDisplay() {
     });
   }
   return (
-    <div>
-      <button onClick={Adding}>View Resume</button>
+    <div className="bground">
+      <h1 style={{ marginTop: "70px" }}>Resume Gallery</h1>
+      <p style={{ marginTop: "20px" }}>
+        Fill your details on create resume page and click the below button to
+        view the resume
+      </p>
+      <button
+        onClick={Adding}
+        style={{
+          color: "white",
+          backgroundColor: "green",
+          borderRadius: "3px",
+          marginTop: "20px",
+          height: "60px",
+        }}
+      >
+        click me to View Resume
+      </button>
 
       {data.map((item) => (
-        <div key={item.id} id="bground">
+        <div key={item.id} id="resume-bg">
           <div
             style={{
-              width: "70px",
-              height: "60px",
-              backgroundColor: "#212426",
+              width: "100px",
+              height: "100px",
+              backgroundColor: "green",
               fontWeight: "bolder",
-              color: "white",
-              fontSize: "40px",
-              textAlign: "center",
+              color: "#282A35",
+              fontSize: "50px",
+
               padding: "2px",
               margin: "5px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             {item.fname[0]}
             {item.lname[0]}
           </div>
           <h1>
-            {item.fName}
-            {item.lName}
+            {item.fname}
+            {item.lname}
           </h1>
           <h4>{item.designation}</h4>
           <span>{item.location}</span> | <span>{item.email}</span> |

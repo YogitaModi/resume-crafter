@@ -1,17 +1,10 @@
 import React, { useContext } from "react";
 import "./resume.css";
-// import { useState } from "react";
+
 import profileContext from "./profileContext";
 
 export default function Profile(props) {
   const pro = useContext(profileContext);
-  // const [name, setName] = useState();
-
-  // const [designation, setDesignation] = useState();
-  // const [location, setLocation] = useState();
-  // const [email, setEmail] = useState();
-  // const [phone, setPhone] = useState();
-  // const [website, setWebsite] = useState();
 
   return (
     <div>

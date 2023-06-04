@@ -34,12 +34,20 @@ border: 1px solid black;
 
 }
 
-#bground{
+#resume-bg{
     height:1400px;
-    background-color: gray;
-    width:80vh;
+    background-color: #282A35;
+    width:70vw;
     margin:10px;
+    margin-left: 190px;
+    margin-top: 80px;
     padding: 10px;
     border: 3px solid #212426;
     border-radius: 5px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+.bground{
+    background-color: antiquewhite;
 }

@@ -34,7 +34,7 @@ export default function ProfessionalExp() {
       <div className="profession">
         <label>Tenure</label>
         <input
-          type="number"
+          type="text"
           value={exp.companyTenure}
           onChange={exp.updateCompanyTenure}
         />

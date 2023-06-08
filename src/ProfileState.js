@@ -27,6 +27,8 @@ export default function ProfileState(props) {
   const [projectTenure, setProjectTenure] = useState(v);
   const [projectUrl, setProjectUrl] = useState(v);
   const [alert, setAlert] = useState(false);
+  const [skill, setSkill] = useState("type and enter");
+  let [skilltag, setSkillTag] = useState([]);
 
   // connecting to backend
   let [sending, setSend] = useState(false);
@@ -165,6 +167,10 @@ export default function ProfileState(props) {
         updateProjectUrl,
         alert,
         updateAlert,
+        skill,
+        setSkill,
+        skilltag,
+        setSkillTag,
       }}
     >
       {props.children}

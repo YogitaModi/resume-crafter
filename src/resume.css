@@ -25,11 +25,12 @@ label{
 
 /* display resume page */
 #resume-bg{
-    height:1150px;
+    /* height:1150px;
    
     width: 900px;
-    
-   
+     */
+   height:100%;
+   width:100%;
     
     
     border-radius: 5px;

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import ReactToPrint from "react-to-print";
 import "./resume.css";
 import profileContext from "./profileContext";
-import Watermark from "@uiw/react-watermark";
+import { Watermark } from "antd";
 
 export default function ResumeDisplay() {
   const back = useContext(profileContext);
@@ -66,6 +66,9 @@ export default function ResumeDisplay() {
       const projectUrl = back.projectUrl;
       const github = back.github;
       const linkdein = back.linkdein;
+      const skills = back.skills;
+      const skilltag = Array.from(back.skilltag);
+
       // console.log(fname, lname, location, designation, phone, email);
 
       fetch("/api", {
@@ -97,6 +100,8 @@ export default function ResumeDisplay() {
           projectTenure,
           projectDescription,
           projectUrl,
+          skills,
+          skilltag,
         }),
       })
         .then((res) => res.json())
@@ -161,111 +166,128 @@ export default function ResumeDisplay() {
               )}
               content={() => componentRef.current}
             />
-
-            <div
-              key={item.id}
-              id="resume-bg"
-              ref={componentRef}
-              className="container"
+            <Watermark
+              content={"RESUME_CRAFTER_YOGITA_MODI"}
+              offset={[10, 10]}
+              rotate={-90}
+              gap={[10, 120]}
             >
-              <div className="left-side">
-                <div
-                  style={{
-                    width: "270px",
-                    height: "200px",
-                    backgroundColor: "whitesmoke",
-                    fontWeight: "bolder",
-                    color: " #00032b",
-                    fontSize: "100px",
+              <div
+                key={item.id}
+                id="resume-bg"
+                ref={componentRef}
+                className="container"
+              >
+                <div className="left-side">
+                  <div
+                    style={{
+                      width: "270px",
+                      height: "200px",
+                      backgroundColor: "whitesmoke",
+                      fontWeight: "bolder",
+                      color: " #00032b",
+                      fontSize: "100px",
 
-                    padding: "2px",
-                    margin: "5px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  {item.fname[0]}
-                  {item.lname[0]}
-                </div>
-                <h1 className="my-3 ">
-                  <span className=" mx-1">{item.fname}</span>
-                  <span>{item.lname}</span>
-                </h1>
-                <h4 className="my-3">{item.designation}</h4>
-                <span className="my-3">
-                  <i
-                    class="fa-solid fa-location-dot mx-3"
-                    style={{ color: "#54e8f2" }}
-                  ></i>
+                      padding: "2px",
+                      margin: "5px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    {item.fname[0]}
+                    {item.lname[0]}
+                  </div>
+                  <h1 className="my-3 ">
+                    <span className=" mx-1">{item.fname}</span>
+                    <span>{item.lname}</span>
+                  </h1>
+                  <h4 className="my-3">{item.designation}</h4>
+                  <span className="my-3">
+                    <i
+                      className="fa-solid fa-location-dot mx-3"
+                      style={{ color: "#54e8f2" }}
+                    ></i>
 
-                  {item.location}
-                </span>{" "}
-                <span className="my-3">
-                  {" "}
-                  <i class="fa-regular fa-envelope mx-3"></i>
-                  {item.email}
-                </span>
-                <span className="my-3">
-                  {" "}
-                  <i
-                    class="fa-solid fa-phone mx-3"
-                    style={{ color: "#6e9ccf" }}
-                  ></i>
-                  {item.phone}
-                </span>
-                <p className="my-3">
-                  <i class="fa-brands fa-linkedin mx-3"></i>
-                  {item.linkdein}
-                </p>
-                <p className="my-3">
-                  <i class="fa-brands fa-github mx-3"></i>
-                  {item.github}
-                </p>
-              </div>
-              <div className="right-side">
-                <h3>ABOUT</h3>
-                <p>{item.about}</p>
-                <hr />
-                <h3>EDUCATION</h3>
-                <h5>{item.university}</h5>
-                <span>{item.startYear}</span> - <span>{item.endYear}</span>
-                <h5>{item.qualification}</h5>
-                <hr />
-                <h3>EXPERIENCE</h3>
-                <h5>{item.company}</h5>
-                <p>{item.companyLoc}</p>
-                <h5>{item.companyDesig}</h5>
-                <h5>{item.companyTenure}</h5>
-                <p>{item.companyExp}</p>
-                <hr />
-                <h3>PROJECTS</h3>
-                <h5>{item.projectTitle}</h5>
-                <p>{item.projectUrl}</p>
-                <p>{item.projectTenure}</p>
-                <p>{item.projectDescription}</p>
-                <div
-                  className="container"
-                  style={{
-                    backgroundColor: "gray",
-                    width: "580px",
-                    height: "25px",
-                    position: "relative",
-                    top: "40px",
-                    padding: "5px",
-                    fontWeight: "bolder",
-                    color: "whitesmoke",
-                  }}
-                >
-                  <p>
-                    <strong>
-                      copyright &copy; Resume Crafter by YOGITA MODI
-                    </strong>
+                    {item.location}
+                  </span>{" "}
+                  <span className="my-3">
+                    {" "}
+                    <i className="fa-regular fa-envelope mx-3"></i>
+                    {item.email}
+                  </span>
+                  <span className="my-3">
+                    {" "}
+                    <i
+                      className="fa-solid fa-phone mx-3"
+                      style={{ color: "#6e9ccf" }}
+                    ></i>
+                    {item.phone}
+                  </span>
+                  <p className="my-3">
+                    <i className="fa-brands fa-linkedin mx-3"></i>
+                    {item.linkdein}
+                  </p>
+                  <p className="my-3">
+                    <i className="fa-brands fa-github mx-3"></i>
+                    {item.github}
                   </p>
                 </div>
+                <div className="right-side">
+                  <h3>ABOUT</h3>
+                  <p>{item.about}</p>
+                  <hr />
+                  <h3>EDUCATION</h3>
+                  <h5>{item.university}</h5>
+                  <span>{item.startYear}</span> - <span>{item.endYear}</span>
+                  <h5>{item.qualification}</h5>
+                  <hr />
+                  <h3>EXPERIENCE</h3>
+                  <h5>{item.company}</h5>
+                  <p>{item.companyLoc}</p>
+                  <h5>{item.companyDesig}</h5>
+                  <h5>{item.companyTenure}</h5>
+                  <p>{item.companyExp}</p>
+                  <hr />
+                  <h3>PROJECTS</h3>
+                  <h5>{item.projectTitle}</h5>
+                  <p>{item.projectUrl}</p>
+                  <p>{item.projectTenure}</p>
+                  <p>{item.projectDescription}</p>
+                  <h3>SKILLS</h3>
+                  {item.skilltag &&
+                    item.skilltag.map((item) => (
+                      <div
+                        className="card my-3 container"
+                        style={{ width: "18rem" }}
+                        key={uuidv4()}
+                      >
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">{item.value}</li>
+                        </ul>
+                      </div>
+                    ))}
+                  <p>{item.skills}</p>
+                  <div
+                    className="container"
+                    style={{
+                      backgroundColor: "gray",
+                      width: "580px",
+                      height: "25px",
+                      position: "relative",
+                      top: "20px",
+                      padding: "5px",
+                      fontWeight: "bolder",
+                      color: "whitesmoke",
+                    }}
+                  >
+                    <p>
+                      <strong>Resume Crafter by YOGITA MODI</strong>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-
+            </Watermark>
             <div>
               <button
                 onClick={deleteName}

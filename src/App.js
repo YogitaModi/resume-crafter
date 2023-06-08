@@ -7,11 +7,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import { useState } from "react";
 import ProfileState from "./ProfileState";
+import Alert from "./Alert";
 
 import ResumeDisplay from "./ResumeDisplay";
+import NotesBar from "./NotesBar";
 
 function App() {
   let [progress, setProgress] = useState(0);
+
   const setProgres = (progress) => {
     setProgress({ progress: progress });
   };
@@ -20,6 +23,8 @@ function App() {
       <ProfileState>
         <Router>
           <Navbar />
+          <NotesBar />
+          <Alert />
           <LoadingBar height={3} color="#f11946" Progress={progress} />
           <Routes>
             <Route

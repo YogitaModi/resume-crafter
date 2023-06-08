@@ -4,13 +4,6 @@ import "./resume.css";
 export default function Home() {
   return (
     <div>
-      <p className="tag-line">
-        <strong>
-          Use this Resume Crafter and build your own resume and kick start your
-          journey
-        </strong>
-      </p>
-
       <div className="home-page">
         <div className="initials">
           <h1>YM</h1>

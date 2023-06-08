@@ -2,7 +2,7 @@ import React from "react";
 import Profile from "./Profile";
 import About from "./About";
 import Academic from "./Academic";
-import ProfessionalExp from "./ProfessionalExp";
+
 import Projects from "./Projects";
 import Skills from "./Skills";
 import { v4 as uuidv4 } from "uuid";
@@ -10,6 +10,7 @@ import { useState } from "react";
 import "./resume.css";
 import profileContext from "./profileContext";
 import { useContext } from "react";
+import ProfessionalExp from "./ProfessionalExp";
 
 export default function Resume() {
   const resum = useContext(profileContext);
@@ -58,9 +59,6 @@ export default function Resume() {
   };
   return (
     <div>
-      <p className="tag-line">
-        <strong>Start editing and build effective resume</strong>
-      </p>
       <div className="resume">
         {/* div for personal informtion */}
 

@@ -1,11 +1,13 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-
+import ReactToPrint from "react-to-print";
 import "./resume.css";
 import profileContext from "./profileContext";
+import Watermark from "@uiw/react-watermark";
 
 export default function ResumeDisplay() {
   const back = useContext(profileContext);
+  const componentRef = useRef();
 
   const [data, setData] = useState([]);
   // Loading initial data from the server
@@ -25,6 +27,8 @@ export default function ResumeDisplay() {
       back.designation &&
       back.phone &&
       back.email &&
+      back.linkdein &&
+      back.github &&
       back.company &&
       back.about &&
       back.university &&
@@ -60,6 +64,8 @@ export default function ResumeDisplay() {
       const projectTenure = back.projectTenure;
       const projectDescription = back.projectDescription;
       const projectUrl = back.projectUrl;
+      const github = back.github;
+      const linkdein = back.linkdein;
       // console.log(fname, lname, location, designation, phone, email);
 
       fetch("/api", {
@@ -75,6 +81,8 @@ export default function ResumeDisplay() {
           designation,
           phone,
           email,
+          linkdein,
+          github,
           company,
           about,
           university,
@@ -97,6 +105,7 @@ export default function ResumeDisplay() {
       //   evt.target.value = "";
       // });
     }
+    back.updateAlert();
   }
 
   // Deleting data from the server using a DELETE request
@@ -110,14 +119,8 @@ export default function ResumeDisplay() {
     });
   }
   return (
-    <div>
-      <p className="tag-line">
-        <strong>
-          Fill your details on create resume page and click the below button to
-          view the resume
-        </strong>
-      </p>
-      <div className="bground">
+    <div id="bground">
+      <div>
         <h1 style={{ marginTop: "15px", color: "whitesmoke", padding: "10px" }}>
           Resume Gallery
         </h1>
@@ -131,68 +134,157 @@ export default function ResumeDisplay() {
             marginTop: "20px",
             height: "60px",
             border: "none",
+            marginBottom: "10px",
           }}
         >
-          <strong>Click me to View Resume</strong>
+          <strong>View Resume</strong>
         </button>
 
         {data.map((item) => (
-          <div key={item.id} id="resume-bg">
-            <div className="left-side">
-              <div
-                style={{
-                  width: "100px",
-                  height: "100px",
-                  backgroundColor: "whitesmoke",
-                  fontWeight: "bolder",
-                  color: " #00032b",
-                  fontSize: "50px",
+          <>
+            <ReactToPrint
+              trigger={() => (
+                <button
+                  style={{
+                    color: "white",
+                    backgroundColor: "green",
+                    borderRadius: "8px",
+                    marginTop: "20px",
+                    height: "60px",
+                    border: "none",
+                    marginBottom: "10px",
+                    marginLeft: "10px",
+                  }}
+                >
+                  <strong>Print Resume</strong>
+                </button>
+              )}
+              content={() => componentRef.current}
+            />
 
-                  padding: "2px",
-                  margin: "5px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                {item.fname[0]}
-                {item.lname[0]}
+            <div
+              key={item.id}
+              id="resume-bg"
+              ref={componentRef}
+              className="container"
+            >
+              <div className="left-side">
+                <div
+                  style={{
+                    width: "270px",
+                    height: "200px",
+                    backgroundColor: "whitesmoke",
+                    fontWeight: "bolder",
+                    color: " #00032b",
+                    fontSize: "100px",
+
+                    padding: "2px",
+                    margin: "5px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.fname[0]}
+                  {item.lname[0]}
+                </div>
+                <h1 className="my-3 ">
+                  <span className=" mx-1">{item.fname}</span>
+                  <span>{item.lname}</span>
+                </h1>
+                <h4 className="my-3">{item.designation}</h4>
+                <span className="my-3">
+                  <i
+                    class="fa-solid fa-location-dot mx-3"
+                    style={{ color: "#54e8f2" }}
+                  ></i>
+
+                  {item.location}
+                </span>{" "}
+                <span className="my-3">
+                  {" "}
+                  <i class="fa-regular fa-envelope mx-3"></i>
+                  {item.email}
+                </span>
+                <span className="my-3">
+                  {" "}
+                  <i
+                    class="fa-solid fa-phone mx-3"
+                    style={{ color: "#6e9ccf" }}
+                  ></i>
+                  {item.phone}
+                </span>
+                <p className="my-3">
+                  <i class="fa-brands fa-linkedin mx-3"></i>
+                  {item.linkdein}
+                </p>
+                <p className="my-3">
+                  <i class="fa-brands fa-github mx-3"></i>
+                  {item.github}
+                </p>
               </div>
-              <h1>
-                {item.fname}
-                {item.lname}
-              </h1>
-              <h4>{item.designation}</h4>
-              <span>{item.location}</span> | <span>{item.email}</span> |
-              <span>{item.phone}</span>
-              <p>{item.website}</p>
+              <div className="right-side">
+                <h3>ABOUT</h3>
+                <p>{item.about}</p>
+                <hr />
+                <h3>EDUCATION</h3>
+                <h5>{item.university}</h5>
+                <span>{item.startYear}</span> - <span>{item.endYear}</span>
+                <h5>{item.qualification}</h5>
+                <hr />
+                <h3>EXPERIENCE</h3>
+                <h5>{item.company}</h5>
+                <p>{item.companyLoc}</p>
+                <h5>{item.companyDesig}</h5>
+                <h5>{item.companyTenure}</h5>
+                <p>{item.companyExp}</p>
+                <hr />
+                <h3>PROJECTS</h3>
+                <h5>{item.projectTitle}</h5>
+                <p>{item.projectUrl}</p>
+                <p>{item.projectTenure}</p>
+                <p>{item.projectDescription}</p>
+                <div
+                  className="container"
+                  style={{
+                    backgroundColor: "gray",
+                    width: "580px",
+                    height: "25px",
+                    position: "relative",
+                    top: "40px",
+                    padding: "5px",
+                    fontWeight: "bolder",
+                    color: "whitesmoke",
+                  }}
+                >
+                  <p>
+                    <strong>
+                      copyright &copy; Resume Crafter by YOGITA MODI
+                    </strong>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="right-side">
-              <h1>About</h1>
-              <p>{item.about}</p>
-              <hr />
-              <h1>Education</h1>
-              <h3>{item.university}</h3>
-              <span>{item.startYear}</span> - <span>{item.endYear}</span>
-              <h5>{item.qualification}</h5>
-              <hr />
-              <h1>Experience</h1>
-              <h3>{item.company}</h3>
-              <p>{item.companyLoc}</p>
-              <h4>{item.companyDesig}</h4>
-              <h5>{item.companyTenure}</h5>
-              <p>{item.companyExp}</p>
-              <hr />
-              <h1>Project</h1>
-              <h3>{item.projectTitle}</h3>
-              <p>{item.projectUrl}</p>
-              <p>{item.projectTenure}</p>
-              <p>{item.projectDescription}</p>
-              <button onClick={deleteName} data-id={item.id}>
-                Delete Resume
+
+            <div>
+              <button
+                onClick={deleteName}
+                data-id={item.id}
+                style={{
+                  color: "white",
+                  backgroundColor: "green",
+                  borderRadius: "8px",
+                  marginTop: "20px",
+                  height: "60px",
+                  border: "none",
+                  marginBottom: "10px",
+                }}
+                className="container col-md-2"
+              >
+                <strong>Delete Resume</strong>
               </button>
             </div>
-          </div>
+          </>
         ))}
       </div>
     </div>

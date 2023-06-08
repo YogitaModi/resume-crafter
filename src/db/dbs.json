@@ -1,27 +1,29 @@
 {
   "api": [
     {
-      "id": "33fa854b-10c2-4421-aff8-128aa02697d1",
-      "fname": "Yogita",
+      "id": "4d9e5393-c977-4f68-9f89-1e9837fe36da",
+      "fname": "Yogita ",
       "lname": "Modi",
       "location": "Rajasthan",
       "designation": "Learner",
-      "phone": "54589678797",
-      "email": "gmail@mail.com",
-      "company": "XYZ PVT. LTD",
-      "about": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
+      "phone": "9158787875457",
+      "email": "chocolate@yogita.com",
+      "linkdein": "https://linkdein.io.com",
+      "github": "https://github.io.com",
+      "company": "XYZ pvt. ltd.",
+      "about": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
       "university": "Poornima college of Engineering",
-      "qualification": "B.TECH",
+      "qualification": "B.Tech",
       "endYear": "2021",
       "startYear": "2017",
-      "companyLoc": "Bangalore",
-      "companyTenure": "45",
-      "companyDesig": "Application Engineer",
-      "companyExp": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
-      "projectTitle": "Resume",
-      "projectTenure": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
-      "projectDescription": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available",
-      "projectUrl": "http://gitHub.io"
+      "companyLoc": "Bengaluru",
+      "companyTenure": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      "companyDesig": "Application Developer",
+      "companyExp": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      "projectTitle": "Resume-Crafter",
+      "projectTenure": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      "projectDescription": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
+      "projectUrl": "https://github.io.com"
     }
   ]
 }

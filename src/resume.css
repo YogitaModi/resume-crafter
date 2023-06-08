@@ -25,14 +25,13 @@ label{
 
 /* display resume page */
 #resume-bg{
-    height:1400px;
+    height:1150px;
    
-    width:70vw;
+    width: 900px;
     
-    margin-left: 190px;
-    margin-top: 40px;
    
-    border: 3px solid #212426;
+    
+    
     border-radius: 5px;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
@@ -41,18 +40,24 @@ label{
     flex-flow: row;
 }
 /* display resume page */
-.bground{
+#bground{
     background-color: #282A35;
+    height: 100%;
+
   
 }
 .left-side{
     background-color: #00032b;
     padding: 10px;
+    width:300px;
+    display: flex;
+    flex-flow: column;
 }
 .right-side{
     background-color:whitesmoke;
     color: #00032b;
     padding: 20px;
+    width: 600px;
 }
 
 /* create resume page */

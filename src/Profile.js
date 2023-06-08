@@ -62,13 +62,22 @@ export default function Profile(props) {
           onChange={pro.updatePhone}
         />
       </div>
-      <div className="profile website">
-        <label htmlFor="website">Website</label>
+      <div className="profile Git">
+        <label htmlFor="github">GitHub</label>
         <input
-          id="website"
+          id="github"
           type="text"
-          value={pro.website}
-          onChange={pro.updateWebsite}
+          value={pro.github}
+          onChange={pro.updateGitHub}
+        />
+      </div>
+      <div className="profile lindein">
+        <label htmlFor="linkdein">Linkdein</label>
+        <input
+          id="linkdein"
+          type="text"
+          value={pro.linkdein}
+          onChange={pro.updateLinkdein}
         />
       </div>
     </div>

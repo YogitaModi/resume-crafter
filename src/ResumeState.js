@@ -2,7 +2,16 @@ import profileContext from "./profileContext";
 import { useState } from "react";
 import React from "react";
 
-export default function ProfileState(props) {
+export default function ResumeState(props) {
+  const professionalValue = [
+    {
+      name: "name",
+      location: "location",
+      designation: "designation",
+      tenure: "tenure",
+      experience: "experience",
+    },
+  ];
   const v = "type";
   const [fName, setFName] = useState(v);
   const [lName, setLName] = useState(v);
@@ -10,23 +19,18 @@ export default function ProfileState(props) {
   const [location, setLocation] = useState(v);
   const [email, setEmail] = useState(v);
   const [phone, setPhone] = useState(v);
-  const [linkdein, setLinkdein] = useState(v);
-  const [github, setGitHub] = useState(v);
+  const [website, setWebsite] = useState(v);
   const [about, setAbout] = useState(v);
   const [university, setUniversity] = useState(v);
   const [qualification, setQualification] = useState(v);
   const [startYear, setStartYear] = useState();
   const [endYear, setEndYear] = useState();
-  const [company, setCompany] = useState(v);
-  const [companyLoc, setCompanyLoc] = useState(v);
-  const [companyTenure, setCompanyTenure] = useState(v);
-  const [companyDesig, setCompanyDesig] = useState(v);
-  const [companyExp, setCompanyExp] = useState(v);
+  const [company, setCompany] = useState(professionalValue);
+
   const [projectTitle, setProjectTitle] = useState(v);
   const [projectDescription, setProjectDescription] = useState(v);
   const [projectTenure, setProjectTenure] = useState(v);
   const [projectUrl, setProjectUrl] = useState(v);
-  const [alert, setAlert] = useState(false);
 
   // connecting to backend
   let [sending, setSend] = useState(false);
@@ -57,11 +61,8 @@ export default function ProfileState(props) {
   const updatePhone = (e) => {
     setPhone(e.target.value);
   };
-  const updateLinkdein = (e) => {
-    setLinkdein(e.target.value);
-  };
-  const updateGitHub = (e) => {
-    setGitHub(e.target.value);
+  const updateWebsite = (e) => {
+    setWebsite(e.target.value);
   };
 
   const updateAbout = (e) => {
@@ -79,21 +80,24 @@ export default function ProfileState(props) {
   const updateEnd = (e) => {
     setEndYear(e.target.value);
   };
-  const updateCompany = (e) => {
-    setCompany(e.target.value);
+  const updateCompany = ({
+    name,
+    designation,
+    tenure,
+    experience,
+    location,
+  }) => {
+    setCompany(
+      professionalValue.push({
+        name: name,
+        designation: designation,
+        location: location,
+        experience: experience,
+        tenure: tenure,
+      })
+    );
   };
-  const updateCompanyLoc = (e) => {
-    setCompanyLoc(e.target.value);
-  };
-  const updateCompanyTenure = (e) => {
-    setCompanyTenure(e.target.value);
-  };
-  const updateCompanyExp = (e) => {
-    setCompanyExp(e.target.value);
-  };
-  const updateCompanyDesig = (e) => {
-    setCompanyDesig(e.target.value);
-  };
+
   const updateProjectitle = (e) => {
     setProjectTitle(e.target.value);
   };
@@ -105,12 +109,6 @@ export default function ProfileState(props) {
   };
   const updateProjectUrl = (e) => {
     setProjectUrl(e.target.value);
-  };
-  const updateAlert = () => {
-    setAlert(true);
-    setTimeout(() => {
-      setAlert(false);
-    }, 2000);
   };
 
   return (
@@ -126,16 +124,14 @@ export default function ProfileState(props) {
         location,
         email,
         phone,
-        linkdein,
-        github,
+        website,
         about,
         updateAbout,
         updateDesi,
         updateEmail,
         updatePhone,
         updateLoc,
-        updateLinkdein,
-        updateGitHub,
+        updateWebsite,
 
         university,
         updateUni,
@@ -146,15 +142,9 @@ export default function ProfileState(props) {
         updateStart,
         updateEnd,
         company,
-        companyDesig,
-        companyExp,
-        companyLoc,
-        companyTenure,
+
         updateCompany,
-        updateCompanyLoc,
-        updateCompanyTenure,
-        updateCompanyExp,
-        updateCompanyDesig,
+
         projectTitle,
         projectDescription,
         projectTenure,
@@ -163,8 +153,6 @@ export default function ProfileState(props) {
         updateProjectDescription,
         updateProjectTenure,
         updateProjectUrl,
-        alert,
-        updateAlert,
       }}
     >
       {props.children}
